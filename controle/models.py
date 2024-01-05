@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Pojeto(models.Model):
+class Projeto(models.Model):
     nome = models.CharField(max_length=50)
 
     def __str__(self):
@@ -10,7 +10,7 @@ class Pojeto(models.Model):
 
 class Tarefa(models.Model):
     nome = models.CharField(max_length=50)
-    projeto = models.ForeignKey(Pojeto,on_delete=models.CASCADE)
+    projeto = models.ForeignKey(Projeto,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome

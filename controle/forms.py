@@ -1,6 +1,7 @@
 from django import forms
-from .models import Pojeto,Tarefa,RegistroHora
+from .models import RegistroHora
 
 class RegistrodeHoras(forms.ModelForm):
-    model = RegistroHora
-    fields = ['tarefa','horas_trabalhadas','data_registro']
+    class Meta:
+        model = RegistroHora
+        fields = ['tarefa','horas_trabalhadas','data_registro']
