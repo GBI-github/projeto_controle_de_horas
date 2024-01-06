@@ -14,6 +14,7 @@ class Tarefa(models.Model):
 
     def __str__(self):
         return self.nome
+    
 class RegistroHora(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     tarefa = models.ForeignKey(Tarefa,on_delete=models.CASCADE)
@@ -22,5 +23,7 @@ class RegistroHora(models.Model):
 
     def __str__(self):
         return(f"{self.usuario.username}- {self.tarefa.nome}- {self.data_registrada}")
+
+
     
     

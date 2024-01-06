@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Projeto,Tarefa,RegistroHora
-from .forms import RegistrodeHoras
+from .forms import  RegistrodeHoras
 
 def vizu_projeto(request):
     projetos = Projeto.objects.all()
@@ -15,7 +15,7 @@ def viazualizar(request):
     registro = RegistroHora.objects.filter(usuario=request.user)
     return render(request, 'controle/vizualizar_registros.html', {'registro': registro})
 
-def registar_horas(request):
+def registrar_horas(request):
     if request.method == "POST":
         form = RegistrodeHoras(request.POST)
         if form.is_valid():
